@@ -59,3 +59,17 @@ typings/
 
 # next.js build output
 .next
+
+# IntelliJ IDEA
+.idea
+*.iws
+*.iml
+*.ipr
+/*/out/
+/*/*/out/
+
+# OS X
+.DS_Store
+
+# Custom
+*.css
