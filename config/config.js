@@ -5,6 +5,7 @@ var fs         = require('fs');
 //--define default values-----------------------------------------------------------------------------------------------
 var defaults   = {
     'environment': 'sandbox',                                               //values: sandbox | production
+    'logLevel': 'info',                                                     //values: silly:0 < debug:1 < verbose:2 < info:3 < warn:4 < error:5
     'app': {
         'name': 'user-feedback',
         'port': '3300',                                                     //http port
@@ -34,4 +35,5 @@ if (!fs.existsSync(configFile)) {
 module.exports = nconf;
 
 console.log('environment: %s', currentEnv);
+console.log('logLevel: %s', nconf.get('logLevel'));
 
