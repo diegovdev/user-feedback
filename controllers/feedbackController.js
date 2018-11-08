@@ -1,4 +1,5 @@
 var logger      = require('../lib/logger/logger');
+var memoryDS    = require('../lib/datastore/memoryDS');
 
 /**
  * @class FeedbackController
@@ -17,8 +18,7 @@ function FeedbackController() {
  */
 FeedbackController.getLastFeedbacks = function getUserList(req, res, next) {
     logger.info('[FeedbackController.getLastFeedbacks]', 'replying feedback list');
-    // res.send('respond with a resource');
-    res.json(["Tony", "Lisa", "Michael", "Ginger", "Food"]);
+    res.json(memoryDS.getAllFeedbacks());
 };
 
 /**
@@ -31,7 +31,8 @@ FeedbackController.getLastFeedbacks = function getUserList(req, res, next) {
  * @return {html} html rendered page
  */
 FeedbackController.addFeedback = function getUserList(req, res, next) {
-    logger.info('[FeedbackController.addFeedback]', 'replying feedback list');
+    logger.info('[FeedbackController.addFeedback]', 'replying feedback list', req.body);
+    memoryDS.storeFeedback(req.body);
     res.json({error: false, message: 'entry added'});
 };
 

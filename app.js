@@ -4,7 +4,7 @@ var express         = require('express');
 var path            = require('path');
 var cookieParser    = require('cookie-parser');
 var lessMiddleware  = require('less-middleware');
-var logger          = require('morgan');
+var httpLogger      = require('morgan');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 
 //--middleware: general-------------------------------------------------------------------------------------------------
-app.use(logger('dev'));
+app.use(httpLogger('dev', {immediate: false}));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
