@@ -1,0 +1,7 @@
+{
+    "environment": "sandbox",
+    "app": {
+        "name": "user-feedback",
+        "port": "3300"
+    }
+}

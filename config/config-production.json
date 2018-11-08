@@ -1,0 +1,7 @@
+{
+    "environment": "production",
+    "app": {
+        "name": "user-feedback",
+        "port": "3300"
+    }
+}
