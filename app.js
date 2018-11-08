@@ -8,8 +8,8 @@ var logger          = require('morgan');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var webAppRouter = require('./routers/webAppRouter');
+var apiRouter = require('./routers/apiRouter');
 
 
 //--initialization------------------------------------------------------------------------------------------------------
@@ -31,8 +31,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //--routes: add own routers---------------------------------------------------------------------------------------------
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/web', webAppRouter);
+app.use('/api', apiRouter);
 
 
 //--error handling: catch 404 and forward to error handler--------------------------------------------------------------
