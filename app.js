@@ -1,15 +1,16 @@
-//--loading external libraries------------------------------------------------------------------------------------------
-var createError     = require('http-errors');
-var express         = require('express');
-var path            = require('path');
-var cookieParser    = require('cookie-parser');
-var lessMiddleware  = require('less-middleware');
-var httpLogger      = require('morgan');
+const createError     = require('http-errors');
+const express         = require('express');
+const path            = require('path');
+const cookieParser    = require('cookie-parser');
+const lessMiddleware  = require('less-middleware');
+const httpLogger      = require('morgan');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
-var webAppRouter = require('./routers/webAppRouter');
-var apiRouter = require('./routers/apiRouter');
+const webAppRouter = require('./routers/webAppRouter');
+const apiRouter = require('./routers/apiRouter');
+const mysqlDS = require('./lib/datastore/mysqlDS');
+mysqlDS.init();
 
 
 //--initialization------------------------------------------------------------------------------------------------------
