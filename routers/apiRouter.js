@@ -1,6 +1,6 @@
 var express             = require('express');
 var router              = express.Router();
-var feedbackController  = require(__dirname+'/../controllers/feedbackController');
+var feedbackController  = require(__dirname+'/../lib/controllers/feedbackController');
 
 
 router.get ('/feedback', feedbackController.getLastFeedbacks);

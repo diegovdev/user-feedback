@@ -1,15 +1,29 @@
-//--loading external libraries------------------------------------------------------------------------------------------
-var nconf      = require('nconf');
-var fs         = require('fs');
+const nconf      = require('nconf');
+const fs         = require('fs');
 
 //--define default values-----------------------------------------------------------------------------------------------
 var defaults   = {
-    'environment': 'sandbox',                                               //values: sandbox | production
-    'logLevel': 'info',                                                     //values: silly:0 < debug:1 < verbose:2 < info:3 < warn:4 < error:5
-    'app': {
-        'name': 'user-feedback',
-        'port': '3300',                                                     //http port
+    environment: 'sandbox',                                               //values: sandbox | production
+    logLevel: 'info',                                                     //values: silly:0 < debug:1 < verbose:2 < info:3 < warn:4 < error:5
+    app: {
+        name: 'user-feedback',
+        port: '3300',                                                     //http port
     },
+    database: {
+        username: 'root',
+        password: 'password',
+        database: 'feedbackdb',
+        host: '127.0.0.1',
+        port: 3306,
+        dialect: 'mysql',
+        operatorsAliases: false,
+        pool: {
+            max: 5,
+            min: 0,
+            acquire: 30000,
+            idle: 10000
+        },
+    }
 };
 
 
