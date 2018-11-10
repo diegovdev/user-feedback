@@ -3,8 +3,9 @@ var router              = express.Router();
 var feedbackController  = require(__dirname+'/../lib/controllers/feedbackController');
 
 
-router.get ('/feedback', feedbackController.getLastFeedbacks);
-router.post('/feedback', feedbackController.addFeedback);
+router.get ('/session/:sessionId', feedbackController.getSession);
+router.post('/session/:sessionId/feedback', feedbackController.addFeedback);
+router.get ('/session/:sessionId/feedback', feedbackController.getLastFeedbacks);
 
 
 module.exports = router;

@@ -5,7 +5,7 @@ const http    = require('http');
 const config  = require('../config/config');
 
 
-//--Get port from environment and store in Express----------------------------------------------------------------------
+//--Set port to be used by Express--------------------------------------------------------------------------------------
 const port = normalizePort(config.get('app:port'));
 app.set('port', port);
 

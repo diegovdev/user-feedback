@@ -8,6 +8,8 @@ var defaults   = {
     app: {
         name: 'user-feedback',
         port: '3300',                                                     //http port
+        validationMode: 'strict',                                     //values: strict | permissive
+        datastore: 'mysql',                                              //values: memory | mysql
     },
     database: {
         username: 'root',
