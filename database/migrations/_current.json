@@ -1,0 +1,104 @@
+{
+    "tables": {
+        "Feedbacks": {
+            "tableName": "Feedbacks",
+            "schema": {
+                "id": {
+                    "primaryKey": true,
+                    "autoIncrement": true,
+                    "seqType": "Sequelize.INTEGER"
+                },
+                "rating": {
+                    "seqType": "Sequelize.ENUM('1', '2', '3', '4', '5')"
+                },
+                "comment": {
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "userId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Users",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.STRING"
+                },
+                "sessionId": {
+                    "allowNull": true,
+                    "references": {
+                        "model": "Sessions",
+                        "key": "id"
+                    },
+                    "onDelete": "SET NULL",
+                    "onUpdate": "CASCADE",
+                    "seqType": "Sequelize.STRING"
+                }
+            },
+            "indexes": []
+        },
+        "Sessions": {
+            "tableName": "Sessions",
+            "schema": {
+                "id": {
+                    "primaryKey": true,
+                    "seqType": "Sequelize.STRING"
+                },
+                "gameId": {
+                    "defaultValue": {
+                        "value": "some-game-id"
+                    },
+                    "seqType": "Sequelize.STRING"
+                },
+                "startDate": {
+                    "seqType": "Sequelize.DATE"
+                },
+                "endDate": {
+                    "seqType": "Sequelize.DATE"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        },
+        "Users": {
+            "tableName": "Users",
+            "schema": {
+                "id": {
+                    "primaryKey": true,
+                    "seqType": "Sequelize.STRING"
+                },
+                "email": {
+                    "seqType": "Sequelize.STRING"
+                },
+                "nickname": {
+                    "seqType": "Sequelize.STRING"
+                },
+                "createdAt": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                },
+                "updatedAt": {
+                    "allowNull": false,
+                    "seqType": "Sequelize.DATE"
+                }
+            },
+            "indexes": []
+        }
+    },
+    "revision": 1
+}
