@@ -6,10 +6,10 @@ var defaults   = {
     environment: 'sandbox',                                               //values: sandbox | production
     logLevel: 'info',                                                     //values: silly:0 < debug:1 < verbose:2 < info:3 < warn:4 < error:5
     app: {
-        name: 'user-feedback',
+        name: 'ubisoft-user-feedback',
         port: '3300',                                                     //http port
-        validationMode: 'permissive',                                         //values: strict | permissive
-        datastore: 'mysql',                                              //values: memory | mysql
+        validationMode: process.env.VALIDATION_MODE || 'permissive',      //values: strict | permissive
+        datastore: process.env.DATASTORE || 'mysql',                      //values: memory | mysql
     },
     database: {
         username: 'root',
@@ -50,6 +50,11 @@ if (!fs.existsSync(configFile)) {
 
 module.exports = nconf;
 
+console.log('------------------------------------------------');
+console.log('app-name: %s', nconf.get('app:name'));
 console.log('environment: %s', currentEnv);
 console.log('logLevel: %s', nconf.get('logLevel'));
+console.log('datastore: %s', nconf.get('app:datastore'));
+console.log('validationMode: %s', nconf.get('app:validationMode'));
+console.log('------------------------------------------------');
 
