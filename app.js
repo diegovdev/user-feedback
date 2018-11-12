@@ -10,8 +10,8 @@ const logger          = require('./lib/logger/logger');
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
 const webAppRouter = require('./routers/webAppRouter');
-const apiRouter = require('./routers/apiRouter');
-const mysqlDS = require('./lib/datastore/mysqlDS');
+const apiRouter    = require('./routers/apiRouter');
+const mysqlDS      = require('./lib/datastore/mysqlDS');
 mysqlDS.init(function () {
     const appName = config.get('app:name');
     const port = config.get('app:port');
