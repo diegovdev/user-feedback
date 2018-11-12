@@ -1,19 +1,19 @@
 version: "3"
 
 services:
-   ubimysql_dc:
+   ubi_mysql_dc:
       image: mysql:5.6
-      container_name: ubimysql_dc
+      container_name: ubi_mysql_dc
       environment:
           MYSQL_ROOT_PASSWORD: password
       expose:
           - "3309"
       ports:
           - "3309:3306"
-   ubiuser_feedback_dc:
+   ubi_user_feedback_dc:
       build: .
       image: ubisoft/user_feedback_dc
-      container_name: ubiuser_feedback_dc
+      container_name: ubi_user_feedback_dc
       expose:
           - "3300"
       ports:
@@ -21,7 +21,7 @@ services:
       environment:
           - VALIDATION_MODE=permissive
           - DATASTORE=mysql
-          - MYSQL_HOST=ubimysql_dc
+          - MYSQL_HOST=ubi_mysql_dc
           - MYSQL_PORT=3306
       links:
-          - ubimysql_dc
+          - ubi_mysql_dc
