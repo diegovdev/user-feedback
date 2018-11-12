@@ -2,7 +2,6 @@
     "environment": "sandbox",
     "logLevel": "info",
     "app": {
-        "name": "ubisoft-user-feedback",
-        "port": "3300"
+        "name": "ubisoft-user-feedback"
     }
 }

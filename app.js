@@ -4,13 +4,20 @@ const path            = require('path');
 const cookieParser    = require('cookie-parser');
 const lessMiddleware  = require('less-middleware');
 const httpLogger      = require('morgan');
+const config          = require('./config/config');
+const logger          = require('./lib/logger/logger');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
 const webAppRouter = require('./routers/webAppRouter');
-const apiRouter = require('./routers/apiRouter');
-const mysqlDS = require('./lib/datastore/mysqlDS');
-mysqlDS.init();
+const apiRouter    = require('./routers/apiRouter');
+const mysqlDS      = require('./lib/datastore/mysqlDS');
+mysqlDS.init(function () {
+    const appName = config.get('app:name');
+    const port = config.get('app:port');
+    logger.info('['+appName+']', 'Listening on port: ' + port);
+    logger.info('['+appName+']', 'Ready!');
+});
 
 
 //--initialization------------------------------------------------------------------------------------------------------

@@ -15,8 +15,8 @@ var defaults   = {
         username: 'root',
         password: 'password',
         database: 'feedbackdb',
-        host: '127.0.0.1',
-        port: 3306,
+        host: process.env.MYSQL_HOST || '127.0.0.1',
+        port: process.env.MYSQL_PORT || 3306,
         dialect: 'mysql',
         operatorsAliases: false,
         pool: {
@@ -55,7 +55,11 @@ console.log('------------------------------------------------');
 console.log('app-name: %s', nconf.get('app:name'));
 console.log('environment: %s', currentEnv);
 console.log('logLevel: %s', nconf.get('logLevel'));
-console.log('datastore: %s', nconf.get('app:datastore'));
 console.log('validationMode: %s', nconf.get('app:validationMode'));
+console.log('datastore: %s', nconf.get('app:datastore'));
+if(nconf.get('app:datastore') ==='mysql') {
+    console.log('mysql: %s', nconf.get('database:host'));
+    console.log('mysql: %s', nconf.get('database:port'));
+}
 console.log('------------------------------------------------');
 
