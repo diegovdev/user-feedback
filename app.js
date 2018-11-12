@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //--routes: add own routers---------------------------------------------------------------------------------------------
 app.use('/web', webAppRouter);
-app.use('/api', apiRouter);
+app.use('/api/v1/', apiRouter);
 
 
 //--error handling: catch 404 and forward to error handler--------------------------------------------------------------

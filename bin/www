@@ -1,9 +1,9 @@
 #!/usr/bin/env node
+process.env.NODE_ENV = 'production';
 const app     = require('../app');
 const debug   = require('debug')('user-feedback:server');
 const http    = require('http');
 const config  = require('../config/config');
-
 
 //--Set port to be used by Express--------------------------------------------------------------------------------------
 const port = normalizePort(config.get('app:port'));

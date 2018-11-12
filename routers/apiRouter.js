@@ -6,8 +6,7 @@ var feedbackController  = require(__dirname+'/../lib/controllers/feedbackControl
 
 router.post ('/feedback/create/', feedbackController.createFeedback);
 router.post ('/feedback/create/:sessionId', feedbackController.createFeedback);
-router.get  ('/feedback/', feedbackController.getFeedback);
-router.get  ('/feedback/:feedbackId', feedbackController.getFeedback);
+router.get  ('/feedback/find/:feedbackId', feedbackController.getFeedback);
 router.get  ('/feedback/find', feedbackController.getLastFeedbacks);
 
 //NOT implemented
