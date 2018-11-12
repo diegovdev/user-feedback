@@ -34,7 +34,7 @@ describe('createFeedback.validations.ut', () => {
         done();
     });
     beforeEach(function () {
-        sandbox = sinon.sandbox.create()
+        sandbox = sinon.createSandbox()
         existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return false; });
         createUser = sandbox.stub(memoryDS, 'createUser').callsFake(async function (user) { return userId; });
         existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return false; });
@@ -52,7 +52,7 @@ describe('createFeedback.validations.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "3",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
 
         //--WHEN--------------------------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@ describe('createFeedback.validations.ut', () => {
         //--GIVEN-------------------------------------------------------------------------------------------------------
         let newFeedback = {
             "rating": "3",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
 
         //--WHEN--------------------------------------------------------------------------------------------------------
@@ -142,7 +142,7 @@ describe('createFeedback.validations.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "3",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
 
         //--WHEN--------------------------------------------------------------------------------------------------------
@@ -207,7 +207,7 @@ describe('createFeedback.validations.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": null,
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
 
         //--WHEN--------------------------------------------------------------------------------------------------------
@@ -239,7 +239,7 @@ describe('createFeedback.validations.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "something",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
 
         //--WHEN--------------------------------------------------------------------------------------------------------
@@ -271,7 +271,7 @@ describe('createFeedback.validations.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": 8,
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
 
         //--WHEN--------------------------------------------------------------------------------------------------------

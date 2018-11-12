@@ -10,18 +10,12 @@ const config    = require('../../../../config/config');
 const datastore = require('../../../../lib/datastore');
 const expect    = chai.expect;
 
-//models
-const models    = require('../../../../lib/models');
-const User      = models.User;
-const Session   = models.Session;
-const Feedback  = models.Feedback;
-
 //to mock
 const mysqlDS   = require('../../../../lib/datastore/mysqlDS');
 
 let sandbox = null;
 
-describe('feedback.mysql.it', () => {
+describe('findFeedback.mysql.it', () => {
     before(function (done) {
         config.set('app:datastore', 'mysql');
         config.set('app:validationMode', 'permissive');
@@ -32,23 +26,17 @@ describe('feedback.mysql.it', () => {
     });
     beforeEach(function(done) {
         //remove all entries
-        let removeAll = async function() {
-            await User.destroy({ where: {} });
-            await Session.destroy({ where: {} });
-            await Feedback.destroy({ where: {} });
-        };
-        removeAll().then(function () {
-            done();
-        })
-        .catch(function (error) {
-            throw new Error(error);
-        });
+        mysqlDS.resetData(done);
     });
     beforeEach(function () {
-        sandbox = sinon.sandbox.create()
+        sandbox = sinon.createSandbox()
     });
     afterEach(function () {
         sandbox.restore()
+    });
+    after(function (done) {
+        //remove all entries
+        mysqlDS.resetData(done);
     });
 
     it('should create and return a Feedback from MySql DS', (done) => {

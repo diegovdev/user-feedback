@@ -6,7 +6,7 @@
         "start": "node ./bin/www",
         "gen-migration": "bash database/gen-migration.sh",
         "run-migrations": "bash database/run-migrations.sh",
-        "test-unit": "NODE_ENV=test node ./node_modules/.bin/mocha --exit 'test/**/*.spec.js'"
+        "test-unit": "NODE_ENV=test node ./node_modules/.bin/mocha --exit 'test/**/*.js'"
     },
     "author": "Diego Carvallo",
     "license": "MIT",

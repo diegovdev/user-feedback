@@ -25,7 +25,7 @@ describe('retrieveFeedback.ut', () => {
         done();
     });
     beforeEach(function () {
-        sandbox = sinon.sandbox.create()
+        sandbox = sinon.createSandbox()
     });
     afterEach(function () {
         sandbox.restore()

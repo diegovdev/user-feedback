@@ -26,11 +26,10 @@ describe('user.memory.it', () => {
     });
     beforeEach(function(done) {
         //remove all entries
-        memoryDS.resetData();
-        done();
+        memoryDS.resetData(done);
     });
     beforeEach(function () {
-        sandbox = sinon.sandbox.create()
+        sandbox = sinon.createSandbox()
     });
     afterEach(function () {
         sandbox.restore()

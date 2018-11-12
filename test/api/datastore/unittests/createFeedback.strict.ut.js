@@ -25,7 +25,7 @@ describe('createFeedback.strict.ut', () => {
         done();
     });
     beforeEach(function () {
-        sandbox = sinon.sandbox.create()
+        sandbox = sinon.createSandbox()
     });
     afterEach(function () {
         sandbox.restore()
@@ -38,7 +38,7 @@ describe('createFeedback.strict.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "2",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
         let existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return false; });
         let existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return true; });
@@ -69,7 +69,7 @@ describe('createFeedback.strict.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "2",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
         let existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return true; });
         let existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return false; });
@@ -100,7 +100,7 @@ describe('createFeedback.strict.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "2",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
         let existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return true; });
         let existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return true; });
@@ -134,7 +134,7 @@ describe('createFeedback.strict.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "2",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
         let existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return true; });
         let existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return true; });
@@ -168,7 +168,7 @@ describe('createFeedback.strict.ut', () => {
         let newFeedback = {
             "Ubi-UserId": userId,
             "rating": "2",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
         let existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return true; });
         let existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return true; });
@@ -201,7 +201,7 @@ describe('createFeedback.strict.ut', () => {
         let feedbackId = 3001;
         let newFeedback = {
             "rating": "2",
-            "comment": "bad connection"
+            "comment": "good gaming session"
         };
         let existsUser = sandbox.stub(memoryDS, 'existsUser').callsFake(async function (user) { return true; });
         let existsSession = sandbox.stub(memoryDS, 'existsSession').callsFake(async function (session) { return true; });
