@@ -1,7 +1,7 @@
 {
 	"_type": "export",
 	"__export_format": 3,
-	"__export_date": "2018-11-13T15:20:37.591Z",
+	"__export_date": "2018-11-13T16:23:16.815Z",
 	"__export_source": "insomnia.desktop.app:v6.0.2",
 	"resources": [
 		{
@@ -55,14 +55,14 @@
 			"isPrivate": false,
 			"metaSortKey": -1541637043501,
 			"method": "GET",
-			"modified": 1542122424789,
-			"name": "/api/feedback/find",
+			"modified": 1542126146807,
+			"name": "/api/feedback/find (with quiery filters)",
 			"parameters": [
 				{
 					"disabled": false,
 					"id": "pair_6ced7c13015147b08b9b3c4a96425f8d",
 					"name": "limit",
-					"value": "3"
+					"value": "30"
 				},
 				{
 					"disabled": true,
@@ -71,7 +71,7 @@
 					"value": "2"
 				},
 				{
-					"disabled": false,
+					"disabled": true,
 					"id": "pair_3c0a817a5936465794dfe5ed80b31069",
 					"name": "rating",
 					"value": "3"
@@ -92,7 +92,7 @@
 			"authentication": {},
 			"body": {
 				"mimeType": "application/json",
-				"text": "{\n\t\"Ubi-UserId\": \"usr-000-024\",\n\t\"rating\": \"2\",\n\t\"comment\": \"masomenitos\"\n}"
+				"text": "{\n\t\"Ubi-UserId\": \"usr-000-024\",\n\t\"rating\": \"2\",\n\t\"comment\": \"all good\"\n}"
 			},
 			"created": 1542122415998,
 			"description": "",
@@ -101,19 +101,13 @@
 					"id": "pair_ad9828b75ebe4abbb28d6c5073dff000",
 					"name": "Content-Type",
 					"value": "application/json"
-				},
-				{
-					"disabled": true,
-					"id": "pair_36a04e1ae07d4c06916a863950032512",
-					"name": "Ubi-UserId",
-					"value": "user-from-header-005"
 				}
 			],
 			"isPrivate": false,
 			"metaSortKey": -1541637043551,
 			"method": "POST",
-			"modified": 1542122423388,
-			"name": "/api/feedback/create/{sessionId}",
+			"modified": 1542126158417,
+			"name": "/api/feedback/create/{sessionId} (user in body)",
 			"parameters": [],
 			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
 			"settingDisableRenderRequestBody": false,
@@ -123,61 +117,6 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "http://localhost:3300/api/v1/feedback/create/ses-555-0002",
-			"_type": "request"
-		},
-		{
-			"_id": "req_0ec886a2858e41cf8f46fa2c84404d62",
-			"authentication": {},
-			"body": {},
-			"created": 1542122416001,
-			"description": "",
-			"headers": [],
-			"isPrivate": false,
-			"metaSortKey": -1541349499419.75,
-			"method": "GET",
-			"modified": 1542122416001,
-			"name": "/web",
-			"parameters": [],
-			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingMaxTimelineDataSize": 1000,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "http://localhost:3300/web",
-			"_type": "request"
-		},
-		{
-			"_id": "req_454f7491d2364ecaa9c28c46c46f5ef0",
-			"authentication": {},
-			"body": {
-				"mimeType": "application/json",
-				"text": "{\n\t\"gameId\": \"somegame\",\n\t\"sessionId\": \"sess2\",\n\t\"userId\": \"userB\",\n\t\"rating\": 5,\n\t\"message\": \"bien nomas\"\n}"
-			},
-			"created": 1542122416004,
-			"description": "",
-			"headers": [
-				{
-					"id": "pair_7c11cb8e8d3b450db2b93ce306e593b9",
-					"name": "Content-Type",
-					"value": "application/json"
-				}
-			],
-			"isPrivate": false,
-			"metaSortKey": -1541234481737.25,
-			"method": "POST",
-			"modified": 1542122416004,
-			"name": "/api/feedback 404 NOT FOUND",
-			"parameters": [],
-			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
-			"settingDisableRenderRequestBody": false,
-			"settingEncodeUrl": true,
-			"settingMaxTimelineDataSize": 1000,
-			"settingRebuildPath": true,
-			"settingSendCookies": true,
-			"settingStoreCookies": true,
-			"url": "http://localhost:3300/api/v1/feedback",
 			"_type": "request"
 		},
 		{
@@ -205,8 +144,8 @@
 			"isPrivate": false,
 			"metaSortKey": -1541291990578.5,
 			"method": "PATCH",
-			"modified": 1542122416009,
-			"name": "/api/feedback/create/:sessionId",
+			"modified": 1542126127657,
+			"name": "/api/feedback/{feedbackId}",
 			"parameters": [],
 			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
 			"settingDisableRenderRequestBody": false,
@@ -215,7 +154,7 @@
 			"settingRebuildPath": true,
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
-			"url": "http://localhost:3300/api/v1/feedback/create/ses-555-0021",
+			"url": "http://localhost:3300/api/v1/feedback/1",
 			"_type": "request"
 		},
 		{
@@ -243,8 +182,8 @@
 			"isPrivate": false,
 			"metaSortKey": -1541320744999.125,
 			"method": "PUT",
-			"modified": 1542122416011,
-			"name": "/api/feedback/create/:sessionId",
+			"modified": 1542126125369,
+			"name": "/api/feedback/create/{sessionId}",
 			"parameters": [],
 			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
 			"settingDisableRenderRequestBody": false,
@@ -266,8 +205,8 @@
 			"isPrivate": false,
 			"metaSortKey": -1541493271460.375,
 			"method": "GET",
-			"modified": 1542122416013,
-			"name": "/api/feedback/find/{feedbackId}",
+			"modified": 1542126155146,
+			"name": "/api/feedback/find/{feedbackId} (single feedback)",
 			"parameters": [],
 			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
 			"settingDisableRenderRequestBody": false,
@@ -287,10 +226,10 @@
 			"description": "",
 			"headers": [],
 			"isPrivate": false,
-			"metaSortKey": -1541421385440.0625,
+			"metaSortKey": -1541637043513.5,
 			"method": "GET",
-			"modified": 1542122416016,
-			"name": "/api/feedback/find/",
+			"modified": 1542125992446,
+			"name": "/api/feedback/find/ (last 15)",
 			"parameters": [],
 			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
 			"settingDisableRenderRequestBody": false,
@@ -300,6 +239,120 @@
 			"settingSendCookies": true,
 			"settingStoreCookies": true,
 			"url": "http://localhost:3300/api/v1/feedback/find",
+			"_type": "request"
+		},
+		{
+			"_id": "req_62feb69ee2704bc9b7719d0781b4f627",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"rating\": \"4\",\n\t\"comment\": \"all good\"\n}"
+			},
+			"created": 1542125894652,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_ad9828b75ebe4abbb28d6c5073dff000",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_36a04e1ae07d4c06916a863950032512",
+					"name": "Ubi-UserId",
+					"value": "user-from-header-005"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1541637043526,
+			"method": "POST",
+			"modified": 1542126172349,
+			"name": "/api/feedback/create/{sessionId} (user in header)",
+			"parameters": [],
+			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3300/api/v1/feedback/create/ses-555-0002",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a43a647dc74e410f9528fcdaf1450f02",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"xxUbi-UserId\": \"usr-000-020\",\n\t\"rating\": \"5\",\n\t\"comment\": \"masomenitos\"\n}"
+			},
+			"created": 1542126028539,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_ad9828b75ebe4abbb28d6c5073dff000",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_36a04e1ae07d4c06916a863950032512",
+					"name": "Ubi-UserId",
+					"value": "user-from-header-001"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1541407008229.75,
+			"method": "PUT",
+			"modified": 1542126122560,
+			"name": "/api/feedback/{feedbackId}",
+			"parameters": [],
+			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3300/api/v1/feedback/1",
+			"_type": "request"
+		},
+		{
+			"_id": "req_a188722db46443838b2961d96b1036ad",
+			"authentication": {},
+			"body": {
+				"mimeType": "application/json",
+				"text": "{\n\t\"xxUbi-UserId\": \"usr-000-020\",\n\t\"rating\": \"5\",\n\t\"comment\": \"masomenitos\"\n}"
+			},
+			"created": 1542126099734,
+			"description": "",
+			"headers": [
+				{
+					"id": "pair_ad9828b75ebe4abbb28d6c5073dff000",
+					"name": "Content-Type",
+					"value": "application/json"
+				},
+				{
+					"disabled": false,
+					"id": "pair_36a04e1ae07d4c06916a863950032512",
+					"name": "Ubi-UserId",
+					"value": "user-from-header-001"
+				}
+			],
+			"isPrivate": false,
+			"metaSortKey": -1541263236157.875,
+			"method": "PATCH",
+			"modified": 1542126130181,
+			"name": "/api/feedback/create/{sessionId}",
+			"parameters": [],
+			"parentId": "fld_ba347e1908c34ab08c637b9a4dd0e75b",
+			"settingDisableRenderRequestBody": false,
+			"settingEncodeUrl": true,
+			"settingMaxTimelineDataSize": 1000,
+			"settingRebuildPath": true,
+			"settingSendCookies": true,
+			"settingStoreCookies": true,
+			"url": "http://localhost:3300/api/v1/feedback/create/ses-555-0021",
 			"_type": "request"
 		}
 	]
