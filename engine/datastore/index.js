@@ -1,4 +1,4 @@
-const logger            = require('../logger/logger');
+const logger            = require('../../lib/logger/logger');
 const config            = require('../../config/config');
 const validator         = require('../validator');
 const memoryDS          = require('./memoryDS');

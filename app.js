@@ -9,15 +9,18 @@ const logger          = require('./lib/logger/logger');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
-const webAppRouter = require('./routers/webAppRouter');
-const apiRouter    = require('./routers/apiRouter');
-const mysqlDS      = require('./lib/datastore/mysqlDS');
-mysqlDS.init(function () {
-    const appName = config.get('app:name');
-    const port = config.get('app:port');
-    logger.info('['+appName+']', 'Listening on port: ' + port);
-    logger.info('['+appName+']', 'Ready!');
-});
+const apiRouter    = require('./api/routers/apiRouter');
+const mysqlDS      = require('./engine/datastore/mysqlDS');
+const appName      = config.get('app:name');
+if(config.get('app:datastore') ==='mysql') {
+    mysqlDS.init(function () {
+        const port = config.get('app:port');
+        logger.info('[' + appName + ']', 'Listening on port: ' + port);
+        logger.info('[' + appName + ']', 'Ready!');
+    });
+} else {
+    logger.info('[' + appName + ']', 'Ready!');
+}
 
 
 //--initialization------------------------------------------------------------------------------------------------------
@@ -39,7 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //--routes: add own routers---------------------------------------------------------------------------------------------
-app.use('/web', webAppRouter);
 app.use('/api/v1/', apiRouter);
 
 

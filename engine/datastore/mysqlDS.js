@@ -9,7 +9,7 @@ const Sequelize = models.Sequelize;
 const sequelize = models.sequelize;
 const config    = require('../../config/config');
 const dbConfig  = config.get('database');
-const logger    = require('../logger/logger');
+const logger    = require('../../lib/logger/logger');
 const mysql     = require('mysql2/promise');
 
 

@@ -1,4 +1,4 @@
-var logger      = require('../logger/logger');
+var logger      = require('../../lib/logger/logger');
 var feedbackAutoIncrement = 0;
 /**
  * @class MemoryDS

@@ -1,5 +1,5 @@
-const logger      = require('../logger/logger');
-const datastore   = require('../datastore');
+const logger      = require('../../lib/logger/logger');
+const datastore   = require('../../engine/datastore');
 
 /**
  * @class SessionController
