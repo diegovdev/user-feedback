@@ -9,7 +9,6 @@ const logger          = require('./lib/logger/logger');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
-const webAppRouter = require('./api/routers/webAppRouter');
 const apiRouter    = require('./api/routers/apiRouter');
 const mysqlDS      = require('./engine/datastore/mysqlDS');
 const appName      = config.get('app:name');
@@ -43,7 +42,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //--routes: add own routers---------------------------------------------------------------------------------------------
-app.use('/web', webAppRouter);
 app.use('/api/v1/', apiRouter);
 
 
