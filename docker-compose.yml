@@ -19,6 +19,7 @@ services:
       ports:
           - "3300:3300"
       environment:
+          - ENVIRONMENT=sandbox
           - VALIDATION_MODE=permissive
           - DATASTORE=mysql
           - MYSQL_HOST=ubi_mysql_dc

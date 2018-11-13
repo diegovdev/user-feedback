@@ -43,7 +43,8 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
     * node v11
     * npm v6.4
     * Ports 3300 and 3309 free
-    * Install dependencies running `npm install` inside the user-feedback folder 
+    * Install dependencies running `npm install` inside the user-feedback folder
+    * No need to install MySql (It will be started using Docker, but if you wish to use an already installed instance, know that this app was tested using MySql v5.6) 
 
 #### Option 1: Run on Docker using MySql (easiest)
 * Run: `docker-compose up` 
@@ -54,23 +55,27 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
     * Run `docker-compose down` to stop and delete the created containers.
 
 #### Option 2: Run on local using InMemory
-* Run: `DATASTORE=memory npm run start`
+* Set env vars: `export DATASTORE=memory && export ENVIRONMENT=sandbox` (in windows use `set DATASTORE=memory && set ENVIRONMENT=sandbox`)
+* Run: `npm run start`
 * Notes:
     * App will run in permissive mode
 
 #### Option 3: Run on local using MySql
 * Start MySql container: `docker-compose up ubi_mysql_dc`
 * Make sure MySql container is ready before starting the app
-* Run: `DATASTORE=mysql npm run start`
+* Set env vars: `export DATASTORE=mysql && export ENVIRONMENT=sandbox` (in windows use `set DATASTORE=mysql && set ENVIRONMENT=sandbox`)
+* Run: `npm run start`
 * Notes:
     * App will run in permissive mode
     * It may take a few minutes for Docker to download images and start MySql
-    * If you want to try strict mode run: `VALIDATION_MODE=strict DATASTORE=mysql npm run start`
+    * If you want to try strict mode set env var: `export VALIDATION_MODE=strict`
     * For strict mode you can add mock users and sessions to the database by running `npm run seeddb`, sessionIds added are `session-2001` to `session-2030`, userIds added are `user-1001` to `user-1030`
     * You can later clear all the info in the database by running `npm run cleardb`
 
 
 ## Running tests
+First set the env var `export NODE_ENV=test` (in windows use `set NODE_ENV=test`)
+
 * Run all tests with: `npm run fulltest` (MySql container must be running)
 * Run only integration tests with: `npm run itest` (MySql container must be running)
 * Run only unit tests with: `npm run utest`
