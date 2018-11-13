@@ -80,7 +80,7 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
 
 #### Frameworks:
 I decided to use NodeJs since I am familiar with it already. I chose ExpressJs for the REST API since it makes it very easy to create endpoints and is very stable.
-I wanted to try something I didnt use before so I chose to user an ORM for Javascript. After a bit of research I chose SequelizeJs because it is promise-based and it has built in migrations support.
+I wanted to try something I didnt use before so I chose to user an ORM for Javascript. After a bit of research I chose [sequelize](http://docs.sequelizejs.com/) because it is promise-based and it has built in migrations support. I also added logging and config libraries to the project, after some research I decide for [winston](https://github.com/winstonjs/winston) for logging since it supports rotating file logs out of the box. For config I used [nconf](https://github.com/indexzero/nconf) as it allows to retrieve config parameters from config files, environment variables, run parameters and also easily have different environment configs (sandbox, production, etc).
 
 #### Internal architecture:
 I separated 2 layers: the API and the Engine. The API is just a dumb presentation layer with no logic that only publishes endpoints to access data and operations.
@@ -97,7 +97,6 @@ Express gives you total freedom on creating your endpoint paths. So I created th
 For the Feedback creation endpoint the sessionId was required to be part of the path. Usually the hierarchical part of the path will tell you the resource you are acting on so for instance using `/api/v1/feedback/{param}` for creation could be confused as the param being the feedbackId instead of the sessionId. So I decided to maintain `/api/v1/feedback/{param}` to act upon a Feedback and `/api/v1/session/{param}` to act upon a Session, and therefor for the Feedback creation endpoint used `/api/v1/feedback/create/{string-param}`. The required parameters "rating" and "comment" are expected to be part of the body payload. The "Ubi-UserId" can be sent either in the body or as an Http header parameter as requested in the exercise instructions.
 
 For retrieving Feedbacks I maintained the above explained path usage and used `/api/v1/feedback/find?limit={}&rating={}` accepting query strings for filters for the search.
-
 
 #### Database:
 I chose to use a relational database, and MySql was an easy choice since it's lightweight and has good performance. For the sake of this exercise the Feedabcks table could have been enough but to mimic a more realistic pre-existing database I created the following 3 tables where Sessions and Users have their own tables with more properties/columns:
@@ -120,4 +119,7 @@ I also created 2 helpful scripts:
 * `./database/run-migrations.sh` will run all the migrations that were still not ran in the database.
 
 #### Performance:
-For this solution to have good performance I believe the most critical focus is on storage and data filtering. Since rating filtering is expressly required I would add an index in the "rating" column of the Feedbacks table.
+For this solution to have good performance I believe the most critical focus is on storage and data filtering. Since rating filtering is expressly required I would add an index in the "rating" column of the Feedbacks table to increase performance on the search query if needed.
+
+## Documentation
+I documented a few classes as sample, for instance the class [MySqlDS.js](https://github.com/sapeish/user-feedback/blob/master/engine/datastore/mysqlDS.js). I used Javadoc style comments that later can be used to generate a documentation page using tools like [JSDoc](http://usejsdoc.org/).
