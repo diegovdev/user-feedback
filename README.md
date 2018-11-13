@@ -40,13 +40,19 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
 ## Running the app
 * Prerequisites:
     * docker v18.03
+    * docker-compose v1.21
     * node v11
     * npm v6.4
-    * Ports 3300 and 3309 free
+    * Port 3300 free (to be used by the Http server)
+    * Port 3309 free (to be used by MySql container)
     * Install dependencies running `npm install` inside the user-feedback folder
-    * No need to install MySql (It will be started using Docker, but if you wish to use an already installed instance, know that this app was tested using MySql v5.6) 
+     * MySql: No need to install (it will be started using Docker)
 
-* If you use [Insomnia](https://insomnia.rest/) rest client, you can import the test endpoint json config file located at `/test/.insomnia/`
+* Useful notes:
+    * MySql: in case you wish to use an already installed instance:
+        * You can change the connection settings of the app at `/config/config.js`
+        * This app was built and tested using MySql v5.6
+    * If you use [Insomnia](https://insomnia.rest/) rest client, you can import the test endpoint json config file located at `/test/.insomnia/`
 
 
 #### Option 1: Run on Docker using MySql (easiest)
@@ -58,7 +64,7 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
     * Run `docker-compose down` to stop and delete the created containers.
 
 #### Option 2: Run on local using InMemory
-* Set env vars: `export DATASTORE=memory&&export ENVIRONMENT=sandbox` (in windows use `set DATASTORE=memory&&set ENVIRONMENT=sandbox`)
+* Set env vars: `export DATASTORE=memory&&export ENVIRONMENT=sandbox` (in Windows use `set DATASTORE=memory&&set ENVIRONMENT=sandbox`)
 * Run: `npm run start`
 * Notes:
     * App will run in permissive mode
@@ -66,7 +72,7 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
 #### Option 3: Run on local using MySql
 * Start MySql container: `docker-compose up ubi_mysql_dc`
 * Make sure MySql container is ready before starting the app
-* Set env vars: `export DATASTORE=mysql&&export ENVIRONMENT=sandbox` (in windows use `set DATASTORE=mysql&&set ENVIRONMENT=sandbox`)
+* Set env vars: `export DATASTORE=mysql&&export ENVIRONMENT=sandbox` (in Windows use `set DATASTORE=mysql&&set ENVIRONMENT=sandbox`)
 * Run: `npm run start`
 * Notes:
     * App will run in permissive mode
@@ -77,7 +83,7 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
 
 
 ## Running tests
-First set the env var `export NODE_ENV=test` (in windows use `set NODE_ENV=test`)
+First set the env var `export NODE_ENV=test` (in Windows use `set NODE_ENV=test`)
 
 * Run all tests with: `npm run fulltest` (MySql container must be running `docker-compose up ubi_mysql_dc`)
 * Run only integration tests with: `npm run itest` (MySql container must be running)
