@@ -46,6 +46,9 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
     * Install dependencies running `npm install` inside the user-feedback folder
     * No need to install MySql (It will be started using Docker, but if you wish to use an already installed instance, know that this app was tested using MySql v5.6) 
 
+* If you use [Insomnia](https://insomnia.rest/) rest client, you can import the test endpoint json config file located at `/test/.insomnia/`
+
+
 #### Option 1: Run on Docker using MySql (easiest)
 * Run: `docker-compose up` 
 * Notes:
