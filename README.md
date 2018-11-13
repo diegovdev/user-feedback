@@ -139,5 +139,5 @@ I also created 2 helpful scripts:
 #### Performance:
 For this solution to have good performance I believe the most critical focus is on storage and data filtering. Since rating filtering is expressly required I would add an index in the "rating" column of the Feedbacks table to increase performance on the search query if needed.
 
-## Documentation
+## Code Documentation
 I documented a few classes as sample, for instance the class [MySqlDS.js](https://github.com/sapeish/user-feedback/blob/master/engine/datastore/mysqlDS.js). I used Javadoc style comments that later can be used to generate a documentation page using tools like [JSDoc](http://usejsdoc.org/).
