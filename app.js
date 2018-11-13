@@ -9,9 +9,9 @@ const logger          = require('./lib/logger/logger');
 
 
 //--loading own libraries-----------------------------------------------------------------------------------------------
-const webAppRouter = require('./routers/webAppRouter');
-const apiRouter    = require('./routers/apiRouter');
-const mysqlDS      = require('./lib/datastore/mysqlDS');
+const webAppRouter = require('./api/routers/webAppRouter');
+const apiRouter    = require('./api/routers/apiRouter');
+const mysqlDS      = require('./engine/datastore/mysqlDS');
 const appName      = config.get('app:name');
 if(config.get('app:datastore') ==='mysql') {
     mysqlDS.init(function () {

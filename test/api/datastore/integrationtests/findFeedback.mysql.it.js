@@ -8,12 +8,12 @@ chai.use(chaiHttp);
 chai.use(sinonChai);
 const server    = require('../../../../app');
 const config    = require('../../../../config/config');
-const datastore = require('../../../../lib/datastore');
+const datastore = require('../../../../engine/datastore');
 const expect    = chai.expect;
 const request   = chai.request;
 
 //to mock
-const mysqlDS   = require('../../../../lib/datastore/mysqlDS');
+const mysqlDS   = require('../../../../engine/datastore/mysqlDS');
 
 let sandbox = null;
 

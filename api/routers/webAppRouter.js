@@ -1,7 +1,7 @@
 var express     = require('express');
 var router      = express.Router();
-var config      = require('../config/config');
-var logger      = require('../lib/logger/logger');
+var config      = require('../../config/config');
+var logger      = require('../../lib/logger/logger');
 
 /* GET home page. */
 router.get('/', function indexRouter(req, res, next) {

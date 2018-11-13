@@ -7,11 +7,11 @@ const sinonChai = require("sinon-chai");
 chai.use(chaiHttp);
 chai.use(sinonChai);
 const config    = require('../../../../config/config');
-const datastore = require('../../../../lib/datastore');
+const datastore = require('../../../../engine/datastore');
 const expect    = chai.expect;
 
 //to mock
-const mysqlDS   = require('../../../../lib/datastore/mysqlDS');
+const mysqlDS   = require('../../../../engine/datastore/mysqlDS');
 
 let sandbox = null;
 

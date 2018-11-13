@@ -1,7 +1,7 @@
 var express             = require('express');
 var router              = express.Router();
-var sessionController   = require(__dirname+'/../lib/controllers/sessionController');
-var feedbackController  = require(__dirname+'/../lib/controllers/feedbackController');
+var sessionController   = require('../controllers/sessionController');
+var feedbackController  = require('../controllers/feedbackController');
 
 
 router.post ('/feedback/create/', feedbackController.createFeedback);
