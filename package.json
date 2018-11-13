@@ -6,7 +6,9 @@
         "start": "ENVIRONMENT=sandbox node ./bin/www",
         "gen-migration": "bash database/gen-migration.sh",
         "run-migrations": "bash database/run-migrations.sh",
-        "alltest": "NODE_ENV=test node ./node_modules/.bin/mocha --exit 'test/**/*.js'",
+        "seeddb": "node_modules/.bin/sequelize db:seed:all",
+        "cleardb": "node_modules/.bin/sequelize db:seed:undo:all",
+        "fulltest": "NODE_ENV=test node ./node_modules/.bin/mocha --exit 'test/**/*.js'",
         "utest": "NODE_ENV=test node ./node_modules/.bin/mocha --exit 'test/api/datastore/unittests/**/*.js'",
         "itest": "NODE_ENV=test node ./node_modules/.bin/mocha --exit 'test/api/datastore/integrationtests/**/*.js'"
     },
