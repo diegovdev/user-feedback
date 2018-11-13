@@ -64,12 +64,14 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
     * Run `docker-compose down` to stop and delete the created containers.
 
 #### Option 2: Run on local using InMemory
+* Dependencies should be installed already (`npm install`)
 * Set env vars: `export DATASTORE=memory&&export ENVIRONMENT=sandbox` (in Windows use `set DATASTORE=memory&&set ENVIRONMENT=sandbox`)
 * Run: `npm run start`
 * Notes:
     * App will run in permissive mode
 
 #### Option 3: Run on local using MySql
+* Dependencies should be installed already (`npm install`)
 * Start MySql container: `docker-compose up ubi_mysql_dc`
 * Make sure MySql container is ready before starting the app
 * Set env vars: `export DATASTORE=mysql&&export ENVIRONMENT=sandbox` (in Windows use `set DATASTORE=mysql&&set ENVIRONMENT=sandbox`)
@@ -83,7 +85,9 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
 
 
 ## Running tests
-First set the env var `export NODE_ENV=test` (in Windows use `set NODE_ENV=test`)
+* First:
+    * set the env var `export NODE_ENV=test` (in Windows use `set NODE_ENV=test`)
+    * dependencies should be installed already (`npm install`)
 
 * Run all tests with: `npm run fulltest` (MySql container must be running `docker-compose up ubi_mysql_dc`)
 * Run only integration tests with: `npm run itest` (MySql container must be running)
