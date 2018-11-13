@@ -79,7 +79,7 @@ The app was tested on MacOS v10.12. I used GitHub task tools when working on the
 ## Running tests
 First set the env var `export NODE_ENV=test` (in windows use `set NODE_ENV=test`)
 
-* Run all tests with: `npm run fulltest` (MySql container must be running)
+* Run all tests with: `npm run fulltest` (MySql container must be running `docker-compose up ubi_mysql_dc`)
 * Run only integration tests with: `npm run itest` (MySql container must be running)
 * Run only unit tests with: `npm run utest`
 

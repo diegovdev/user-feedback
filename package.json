@@ -8,9 +8,9 @@
         "run-migrations": "bash database/run-migrations.sh",
         "seeddb": "node_modules/.bin/sequelize db:seed:all",
         "cleardb": "node_modules/.bin/sequelize db:seed:undo:all",
-        "fulltest": "node ./node_modules/.bin/mocha --exit 'test/api/**/*.js'",
-        "utest": "node ./node_modules/.bin/mocha --exit 'test/api/datastore/unittests/**/*.js'",
-        "itest": "node ./node_modules/.bin/mocha --exit 'test/api/datastore/integrationtests/**/*.js'"
+        "utest": "node ./node_modules/mocha/bin/mocha --exit test/api/datastore/unittests/**/*.js",
+        "itest": "node ./node_modules/mocha/bin/mocha --exit test/api/datastore/integrationtests/**/*.js",
+        "fulltest": "node ./node_modules/mocha/bin/mocha --exit test/api/**/*.js"
     },
     "author": "Diego Carvallo",
     "license": "MIT",
