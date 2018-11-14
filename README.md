@@ -13,7 +13,7 @@ For MySql, when the app starts it will automatically create the database and it'
 * **strict:** In strict mode when creating a new Feedback entry the provided userId and sessionId must be known entities, i.e. they must exist in the data-store already.
 * **permissive:** In permissive mode if they don't exist then they will be created before creating the new Feedback entry.
 
-The app was tested on MacOS v10.12. I used GitHub task tools when working on the project, you can see the issues/tasks history [here](https://github.com/sapeish/user-feedback/issues?utf8=✓&q=is%3Aissue+sort%3Acreated-asc+) and the Kanban board I used [here](https://github.com/sapeish/user-feedback/projects/1). 
+The app was tested on MacOS v10.12. I used GitHub task tools when working on the project, you can see [the issues/tasks history](https://github.com/sapeish/user-feedback/issues?utf8=✓&q=is%3Aissue+sort%3Acreated-asc+) and [the Kanban board](https://github.com/sapeish/user-feedback/projects/1) I used. 
 
 ## Endpoints
 **To create a new Feedback entry:**
